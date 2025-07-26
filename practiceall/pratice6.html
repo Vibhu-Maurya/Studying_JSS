@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>Pratice </title>
+</head>
+<body>
+ <script>
+  product = {
+    size : 22,
+    colour : 'red',
+    brand : 'lolo',
+    transport : 'bus',
+    'delivery time' : 'same day',
+  }
+  // let CopyProduct = product;
+  //  console.log(product);
+  //  CopyProduct.size = 632;
+  //  console.log(product);
+  //  CopyProduct.colour = 'orange';
+  //  console.log(product);
+  console.log(product['delivery time']);
+    let obj = {
+      message: 'good job',
+      status: 'complete',
+    }
+    console.log(obj);
+    let {message,status}= obj;
+    console.log(message);
+    console.log(status);
+    
+    function identicalProduct(product1,product2){
+
+      if (typeof product1 !== obj || typeof product2 !== obj ){
+        console.warn('parameter is used is not correct');
+        return false;
+      }
+
+      if (product1 == product2){
+         return true;
+      }
+      if(product1.size === product2.size &&
+        product1.colour === product2.colour &&
+        product1.brand === product2.brand &&
+        product1.transport === product2.transport )
+      {
+        return true;
+      }
+      else{
+        return false;
+      }
+      
+    }
+    product2 = {
+    size : 86,
+    colour : 'red',
+    brand : 'lolo',
+    transport : 'bus',
+    'delivery time' : 'same day',
+  }
+    console.log(identicalProduct(product,''));
+    console.log(identicalProduct(product,product2));
+    console.log(identicalProduct(product2,product2));
+
+
+ </script> 
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+  <title>pratice7</title>
+  <style>
+    #my-button{
+      height: 100px;
+      width: 100px;
+      border: none;
+      border-radius: 50px;
+      font-size: 50px;
+    }
+    .odd{
+      background-color: brown;
+    }
+    .even{
+      background-color: yellowgreen;
+    }
+  </style>
+</head>
+<body>
+
+  <h3 id="greeting"></h3>
+  <button id="my-button" onclick="buttonPress()"></button>
+
+  <script>
+    let noOfTimeButtonpress = localStorage.getItem('noOfTimeButtonpress') || 0;
+
+    function buttonPress(){
+    noOfTimeButtonpress++;
+    localStorage.setItem('noOfTimeButtonpress' , noOfTimeButtonpress);
+    updatebutton();
+   }
+
+   function updatebutton(){
+
+    let button=document.querySelector('#my-button');
+    
+    if (noOfTimeButtonpress % 2 === 0){
+        button.classList.remove('odd');
+        button.classList.add('even');
+
+    }
+    else{
+      button.classList.remove('even');
+      button.classList.add('odd');
+    }
+    button.innerText = noOfTimeButtonpress;
+
+}
+   updatebutton();
+
+
+
+
+
+
+    function dogreating(personName = 'dear') {
+      let date = new Date();
+      let hours = date.getHours();
+      //let hours = 19;
+      let heading = document.querySelector('#greeting')
+      console.log(hours)
+      if (hours > 5 && hours < 12) {
+            heading.innerText = `Good Morning  ${personName}`;
+          } else if (hours > 12 && hours < 18) {
+            heading.innerText = `Good Afternoon  ${personName}`;
+          } else {
+            heading.innerText = `Good Night  ${personName}`;
+          }
+    } 
+    dogreating('vibhu');  
+  </script>
+</body>
+</html>

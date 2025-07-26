@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+  <title>json</title>
+</head>
+<body>
+  <script>
+    // let product = {
+    //    size : 'd',
+    //    weight: 45,
+    //    color: 'red',
+    //    back : {
+    //     cloths : 't shirt',
+    //     shose : 45,
+    //    },
+    // };
+    // console.log(typeof product);
+    // console.log(product);
+    // let str = JSON.stringify(product);
+    // console.log( typeof str);
+    // console.log(str);
+
+    // let newproduct = JSON.parse(str);
+    // console.log( typeof newproduct);
+    // console.log(newproduct);
+
+      let product = {
+       size : 'd',
+       weight: 45,
+       color: 'red',
+       back : {
+        cloths : 't shirt',
+        shose : 45,
+       },
+    };
+    
+    // localStorage.setItem('name','something');
+    // localStorage.setItem('shop','viploveghhhf');
+    // console.log(localStorage.getItem('name'));
+
+     localStorage.setItem('product',JSON.stringify(product));
+  </script>
+</body>
+</html>
